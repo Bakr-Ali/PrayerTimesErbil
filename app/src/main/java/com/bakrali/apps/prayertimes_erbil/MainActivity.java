@@ -4,6 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView tvResults;
@@ -393,6 +398,100 @@ public class MainActivity extends AppCompatActivity {
                 {"6:2","7:20","12:17","2:44","5:4","6:19"},
                 {"6:2","7:20","12:17","2:45","5:5","6:20"}};
 
-        tvResults.setText("hi");
+
+        /*
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-DD");
+        String date = sdf.format(calendar.getTime());
+        */
+
+        //https://stackoverflow.com/a/15698784
+        String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+
+
+        String month = currentDate.substring(3,5);
+        //month = month.replaceFirst("^0+(?!$)", "");
+        int monthInt = Integer.parseInt(month);
+
+        String day = currentDate.substring(0,2);
+        //day = day.replaceFirst("^0+(?!$)", "");
+        int dayInt = Integer.parseInt(day);
+
+
+
+        if (monthInt == 1) {
+            for (int x = 0; x < 6; x++) {
+                System.out.println(Month1[dayInt][x]);
+            }
+        }
+
+        else if (monthInt == 2) {
+            for (int x = 0; x < 6; x++) {
+                System.out.println(Month2[dayInt][x]);
+            }
+        }
+
+        else if (monthInt == 3) {
+            for (int x = 0; x < 6; x++) {
+                System.out.println(Month3[dayInt][x]);
+            }
+        }
+
+        else if (monthInt == 4) {
+            for (int x = 0; x < 6; x++) {
+                System.out.println(Month4[dayInt][x]);
+            }
+        }
+
+        else if (monthInt == 5) {
+            for (int x = 0; x < 6; x++) {
+                System.out.println(Month5[dayInt][x]);
+            }
+        }
+
+        else if (monthInt == 6) {
+            for (int x = 0; x < 6; x++) {
+                System.out.println(Month6[dayInt][x]);
+            }
+        }
+
+        else if (monthInt == 7) {
+            for (int x = 0; x < 6; x++) {
+                System.out.println(Month7[dayInt][x]);
+            }
+        }
+
+        else if (monthInt == 8) {
+            for (int x = 0; x < 6; x++) {
+                System.out.println(Month8[dayInt][x]);
+            }
+        }
+
+        else if (monthInt == 9) {
+            for (int x = 0; x < 6; x++) {
+                System.out.println(Month9[dayInt][x]);
+            }
+        }
+
+        else if (monthInt == 10) {
+            for (int x = 0; x < 6; x++) {
+                System.out.println(Month10[dayInt][x]);
+            }
+        }
+
+        else if (monthInt == 11) {
+            for (int x = 0; x < 6; x++) {
+                System.out.println(Month11[dayInt][x]);
+            }
+        }
+
+        else if (monthInt == 12) {
+            for (int x = 0; x < 6; x++) {
+                System.out.println(Month12[dayInt][x]);
+            }
+        }
+
+
+        tvResults.setText(currentDate + "\n" + monthInt + "\n" + dayInt);
     }
 }
