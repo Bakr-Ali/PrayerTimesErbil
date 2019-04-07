@@ -1,7 +1,10 @@
 package com.bakrali.apps.prayertimes_erbil;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -421,7 +424,7 @@ public class MainActivity extends AppCompatActivity {
         */
 
         //https://stackoverflow.com/a/15698784
-        String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        String currentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
 
 
         String month = currentDate.substring(3,5);
@@ -897,8 +900,28 @@ public class MainActivity extends AppCompatActivity {
         tvMaghribTime.setText(prayerTimes [monthInt-1][dayInt-1][4]);
         tvIshaTime.setText(prayerTimes [monthInt-1][dayInt-1][5]);
 
+        Button refresh = findViewById(R.id.btn_refresh);
+
+        //Listening to button event
+        refresh.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0) {
+                //Starting a new Intent
+                Intent reload = new Intent(getApplicationContext(), MainActivity.class);
 
 
-        tvResults.setText(currentDate);
+
+                startActivity(reload);
+
+
+            }
+        });
+
+
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+        Date d = new Date();
+        String dayOfTheWeek = sdf.format(d);
+
+        tvResults.setText(dayOfTheWeek + "\n" + currentDate);
     }
 }

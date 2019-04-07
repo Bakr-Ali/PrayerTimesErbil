@@ -19,6 +19,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tvResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAnchor" />
+
+    <TextView
         android:id="@+id/tvFajrText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -162,16 +174,19 @@
         app:layout_constraintStart_toEndOf="@+id/tvAnchor"
         app:layout_constraintTop_toBottomOf="@+id/tvMaghribTime" />
 
-    <TextView
-        android:id="@+id/tvResults"
+    <Button
+        android:id="@+id/btn_refresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="40dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
+        android:text="Refresh"
+        android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
