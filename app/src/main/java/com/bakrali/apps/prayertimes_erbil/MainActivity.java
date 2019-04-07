@@ -12,12 +12,26 @@ public class MainActivity extends AppCompatActivity {
 
     TextView tvResults;
 
+    TextView tvFajrTime;
+    TextView tvSunriseTime;
+    TextView tvDhuhrTime;
+    TextView tvAsrTime;
+    TextView tvMaghribTime;
+    TextView tvIshaTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         tvResults = findViewById(R.id.tvResults);
+
+        tvFajrTime = findViewById(R.id.tvFajrTime);
+        tvSunriseTime = findViewById(R.id.tvSunriseTime);
+        tvDhuhrTime = findViewById(R.id.tvDhuhrTime);
+        tvAsrTime = findViewById(R.id.tvAsrTime);
+        tvMaghribTime = findViewById(R.id.tvMaghribTime);
+        tvIshaTime = findViewById(R.id.tvIshaTime);
 
         String [] [] Month1 = {{"6:2","7:21","12:16","2:45","5:6","6:21"},//1
                 {"6:3","7:21","12:16","2:45","5:6","6:21"},//2
